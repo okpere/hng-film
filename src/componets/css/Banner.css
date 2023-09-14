@@ -1,0 +1,19 @@
+.Banner{
+    background-image: url('../../assets/Poster.svg');
+    width: 100%;
+    height: 65vh;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+}
+.Banner h1{
+    font-size: 20px;
+    margin: 5px;
+}
+/* @media only screen and (max-width: 768px) {
+    .Banner{
+        margin: 0 auto;
+    }
+} */

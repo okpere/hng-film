@@ -6,3 +6,9 @@
     padding: 0px 50px;
     margin: 0 auto;
 }
+body,html{
+    height: 100vh;
+    background: #121212;
+    font-family: 'Commissioner', sans-serif;
+    color: #F3F3F3;
+   }
