@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Banner from "./componets/Banner";
 import Main from "./componets/Main";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MovieDetail from "./componets/MovieDetail";
