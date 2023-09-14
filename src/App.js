@@ -1,9 +1,22 @@
-
-import './App.css';
+import React from "react";
+import "./App.css";
+import Banner from "./componets/Banner";
+import Main from "./componets/Main";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import MovieDetail from "./componets/MovieDetail";
 
 function App() {
   return (
-    <div>App</div>
+    // <div className="app">
+    //   <Banner/>
+    //   <Main/>
+    // </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="movie/:id" element={<MovieDetail/>} />
+      </Routes>
+    </Router>
   );
 }
 

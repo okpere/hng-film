@@ -1,0 +1,16 @@
+.movieList{
+    display: flex;
+    margin: 0 80px;
+    gap: 100px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.movie-poster{
+    width: 150px;
+}
+.movieList_card{
+    max-width: 150px;
+}
+.movie_title{
+    font-size: 20px;
+}
