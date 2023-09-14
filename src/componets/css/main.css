@@ -1,0 +1,14 @@
+.main {
+  padding: 50px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main h1 {
+    font-weight: 520;
+}
+.main_see {
+  display: flex;
+  align-items: center;
+  color: #e18a9b;
+}

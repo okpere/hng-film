@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./css/Card.modules.css";
+import "./css/Card.css";
 
 const Card = () => {
   const [movieList, setMovieList] = useState([]);
@@ -27,11 +27,10 @@ const Card = () => {
     const movie = firstTenMovies[i];
     const releaseDate = movie.release_date.split("-")[0];
     movieElements.push(
-      <Link to={`/movie/${movie.id}`} key={movie.id}>
-      <div className="movieList_card" data-testid="movie-card" key={movie.id}>
+      <Link className="test" to={`/movie/${movie.id}`} key={movie.id}>
+      <div data-testid="movie-card" key={movie.id}>
         <img
           data-testid="movie-poster"
-          className="movie-poster"
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt=""
         />

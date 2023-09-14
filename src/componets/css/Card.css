@@ -1,0 +1,38 @@
+.movieList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 40px;
+  padding: 10px 50px;
+}
+
+[data-testid="movie-card"] {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 2px;
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+[data-testid="movie-card"]:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a box shadow on hover */
+  background-color: #e0e0e0; /* Change background color to a lighter shade on hover */
+  transform: scale(1.05);
+}
+
+[data-testid="movie-title"] {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+[data-testid="movie-poster"] {
+  max-width: 100%;
+}
+
+[data-testid="movie-release-date"] {
+  font-style: italic;
+  margin: 2px;
+  font-size: 0.8rem;
+}
+.movieList .test {
+  text-decoration: none;
+  color: inherit;
+}

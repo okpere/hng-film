@@ -1,6 +1,5 @@
 *{
     box-sizing: border-box;
-
 }
 .app{
     padding: 0px 50px;
@@ -8,7 +7,5 @@
 }
 body,html{
     height: 100vh;
-    background: #121212;
     font-family: 'Commissioner', sans-serif;
-    color: #F3F3F3;
    }
