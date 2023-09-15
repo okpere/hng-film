@@ -1,16 +1,35 @@
 .Banner{
     background-image: url('../../assets/Poster.svg');
     width: 100%;
-    height: 65vh;
+    height: 100vh;
     background-position: center;
     background-size: cover;
     color: white;
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
 }
 .Banner h1{
-    font-size: 20px;
+    font-size: 3rem;
+    max-width:300px;
     margin: 5px;
+}
+.banner-discuss{
+    max-width:350px;
+}
+.banner-discuss_2{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.banner-discuss_3{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.bannerimg{
+    padding: 10px 0px;
 }
 /* @media only screen and (max-width: 768px) {
     .Banner{

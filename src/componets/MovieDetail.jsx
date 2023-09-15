@@ -1,32 +1,94 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import SideBar from './SideBar'
+import './css/moviedetail.css'
 
 const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
+  const [videos, setVideos] = useState([]);
+  const [credits, setCredits] = useState(null);
 
   useEffect(() => {
-    const getMovie = () => {
-      fetch(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=f10b8cff788e19bc502300e997f55d6d`
-      )
-        .then((res) => res.json())
-        .then((data) => setMovie(data))
-        .catch((error) => console.error("Error fetching data:", error));
+    const fetchData = async () => {
+      const movieResponse = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=f10b8cff788e19bc502300e997f55d6d`);
+      const movieData = await movieResponse.json();
+
+      const videosResponse = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=f10b8cff788e19bc502300e997f55d6d`);
+      const videosData = await videosResponse.json();
+
+      const creditsResponse = await fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=f10b8cff788e19bc502300e997f55d6d`);
+      const creditsData = await creditsResponse.json();
+
+      setMovie(movieData);
+      setVideos(videosData.results);
+      setCredits(creditsData);
     };
 
-    getMovie();
+    fetchData();
   }, [id]);
 
-  if (!movie) {
+  const formatRuntime = (minutes) => {
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+    return `${hours}h ${remainingMinutes}min`;
+  };
+
+  if (!movie || !credits) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div>
-      <h1 data-testid="movie-title">{movie.title}</h1>
-      <p data-testid="movie-overview">{movie.overview}</p>
-      <p>{movie.release_date}</p>
+    <div className="moviedetailContainer">
+        <SideBar/>
+        <div className="moviedetailcontent">
+            <div className="movie-trailer">
+            {videos.length > 0 && (
+        <div width ="100%">
+          <iframe
+            width="800"
+            height="350"
+            src={`https://www.youtube.com/embed/${videos[0].key}`}
+            title="Trailer"
+            allowFullScreen
+            frameBorder={0}
+          ></iframe>
+        </div>
+      )}
+    </div>
+    <div className="moveabout">
+        <div className="name_movie">
+            <h1 data-testid="movie-title">{movie.title}</h1>
+            <p data-testid="release_date">. {movie.release_date}</p>
+            <p data-testid="release_runtime">. {formatRuntime(movie.runtime)}</p>
+        </div>
+        <p data-testid="movie-overview">{movie.overview}</p>
+      <div>
+        <h3>Director</h3>
+        {credits.crew.map((person) =>
+          person.job === "Director" ? <p key={person.id}>{person.name}</p> : null
+        )}
+      </div>
+
+      <div>
+        <h3>Writers</h3>
+        {credits.crew
+          .filter((person) => person.department === "Writing")
+          .slice(0, 3)
+          .map((person) => (
+            <p key={person.id}>{person.name}</p>
+          ))}
+      </div>
+
+      <div>
+        <h3>Stars</h3>
+        {credits.cast.slice(0, 3).map((person) => (
+          <p key={person.id}>{person.name}</p>
+        ))}
+      </div>
+    </div>
+        
+        </div>
     </div>
   );
 };

@@ -1,0 +1,33 @@
+.moviedetailContainer{
+    display: flex;
+}
+.moviedetailcontent{
+    padding: 30px;
+}
+.moveabout{
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+.name_movie{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+[data-testid="movie-title"]{
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+[data-testid="release_date"]{
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+[data-testid="release_runtime"]{
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+[data-testid="movie-overview"]{
+    font-size: 0.9rem;
+    font-weight: 400;
+    max-width: 800px;
+    letter-spacing: 0.5px;
+}

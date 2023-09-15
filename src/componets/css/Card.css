@@ -6,8 +6,7 @@
 }
 
 [data-testid="movie-card"] {
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
+  position: relative;
   padding: 2px;
   text-align: center;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -20,19 +19,43 @@
 
 [data-testid="movie-title"] {
   font-size: 0.7rem;
-  font-weight: bold;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+  margin: 0;
 }
-
+.favorite {
+  position: absolute;
+  top: 2%;
+  right: 5%;
+}
 [data-testid="movie-poster"] {
   max-width: 100%;
 }
-
+.thenames {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+.thenames_rating {
+  display: flex;
+  gap: 5px;
+}
+.thenames_rating > p {
+  font-size: 0.6rem;
+  color: gray;
+}
 [data-testid="movie-release-date"] {
   font-style: italic;
-  margin: 2px;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
+  color: gray;
+  padding-top: 5px;
 }
 .movieList .test {
   text-decoration: none;
   color: inherit;
+}
+[data-testid="movie-genres"]{
+    font-size: 0.6rem;
+    color: gray;
 }

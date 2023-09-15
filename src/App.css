@@ -1,11 +1,6 @@
 *{
     box-sizing: border-box;
 }
-.app{
-    padding: 0px 50px;
-    margin: 0 auto;
-}
 body,html{
-    height: 100vh;
     font-family: 'Commissioner', sans-serif;
    }
