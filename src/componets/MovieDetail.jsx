@@ -45,18 +45,19 @@ const MovieDetail = () => {
     <div className="moviedetailContainer">
         <SideBar/>
         <div className="moviedetailcontent">
-            <div className="movie-trailer">
+            <div className="wrapper">
             {videos.length > 0 && (
-        <div width ="100%">
           <iframe
-            width="500"
-            height="350"
+          position = 'absolute'
+          top= '0'
+          left= '0'
+          width = '100%'
+          height = '100%'
             src={`https://www.youtube.com/embed/${videos[0].key}`}
             title="Trailer"
             allowFullScreen
-            frameBorder={0}
+            frameBorder="0"
           ></iframe>
-        </div>
       )}
     </div>
     <div className="moveabout">

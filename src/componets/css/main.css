@@ -6,9 +6,16 @@
 }
 .main h1 {
     font-weight: 520;
+    font-size: 1.5rem;
 }
 .main_see {
   display: flex;
   align-items: center;
   color: #e18a9b;
+}
+
+@media only screen and (max-width: 468px) {
+  .main_see{
+      display: none;
+  }
 }

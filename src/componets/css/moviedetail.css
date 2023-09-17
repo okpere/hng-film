@@ -1,48 +1,60 @@
-.moviedetailContainer{
-    display: flex;
+.moviedetailContainer {
+  display: flex;
+  width: 100%;
 }
-.moviedetailcontent{
-    padding: 30px;
+.moviedetailcontent {
+  padding: 30px;
 }
-.moveabout{
-    font-size: 0.9rem;
-    font-weight: 400;
+.moveabout {
+  font-size: 0.9rem;
+  font-weight: 400;
 }
-.name_movie{
-    display: flex;
-    align-items: center;
-    gap: 5px;
+.name_movie {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
-[data-testid="movie-title"]{
-    font-size: 0.9rem;
-    font-weight: 400;
+[data-testid="movie-title"] {
+  font-size: 0.9rem;
+  font-weight: 400;
 }
-[data-testid="release_date"]{
-    font-size: 0.9rem;
-    font-weight: 400;
+[data-testid="release_date"] {
+  font-size: 0.9rem;
+  font-weight: 400;
 }
-[data-testid="release_runtime"]{
-    font-size: 0.9rem;
-    font-weight: 400;
+[data-testid="release_runtime"] {
+  font-size: 0.9rem;
+  font-weight: 400;
 }
-[data-testid="movie-overview"]{
-    font-size: 0.9rem;
-    font-weight: 400;
-    max-width: 800px;
-    letter-spacing: 0.5px;
+[data-testid="movie-overview"] {
+  font-size: 0.9rem;
+  font-weight: 400;
+  max-width: 700px;
+  letter-spacing: 0.5px;
 }
-.moviecast{
-    display: flex;
-    flex-direction: column;
+.moviecast {
+  display: flex;
+  flex-direction: column;
 }
-.moviecast div{
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.moviecast div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.moviecast p{
-    color: #d78197;
+.moviecast p {
+  color: #d78197;
 }
-.moviecast h3{
-    font-weight: 400;
+.moviecast h3 {
+  font-weight: 400;
+}
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 700px;
+  height: 350px;
+}
+@media only screen and (max-width: 768px) {
+    .sidebar{
+        display: none;
+    }
 }
