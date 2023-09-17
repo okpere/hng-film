@@ -31,3 +31,18 @@
     max-width: 800px;
     letter-spacing: 0.5px;
 }
+.moviecast{
+    display: flex;
+    flex-direction: column;
+}
+.moviecast div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.moviecast p{
+    color: #d78197;
+}
+.moviecast h3{
+    font-weight: 400;
+}

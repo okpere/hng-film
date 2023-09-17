@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SideBar from './SideBar'
+import './css/sidebar.css'
 import './css/moviedetail.css'
 
 const MovieDetail = () => {
@@ -37,7 +38,9 @@ const MovieDetail = () => {
   if (!movie || !credits) {
     return <div>Loading...</div>;
   }
-
+ console.log(movie)
+ console.log(movie.imdb_id
+  )
   return (
     <div className="moviedetailContainer">
         <SideBar/>
@@ -46,7 +49,7 @@ const MovieDetail = () => {
             {videos.length > 0 && (
         <div width ="100%">
           <iframe
-            width="800"
+            width="500"
             height="350"
             src={`https://www.youtube.com/embed/${videos[0].key}`}
             title="Trailer"
@@ -63,7 +66,8 @@ const MovieDetail = () => {
             <p data-testid="release_runtime">. {formatRuntime(movie.runtime)}</p>
         </div>
         <p data-testid="movie-overview">{movie.overview}</p>
-      <div>
+        <div className="moviecast">
+        <div>
         <h3>Director</h3>
         {credits.crew.map((person) =>
           person.job === "Director" ? <p key={person.id}>{person.name}</p> : null
@@ -86,6 +90,8 @@ const MovieDetail = () => {
           <p key={person.id}>{person.name}</p>
         ))}
       </div>
+        </div>
+      
     </div>
         
         </div>
