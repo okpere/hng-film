@@ -39,8 +39,6 @@ const MovieDetail = () => {
     return <div>Loading...</div>;
   }
  console.log(movie)
- console.log(movie.imdb_id
-  )
   return (
     <div className="moviedetailContainer">
         <SideBar/>
@@ -63,8 +61,8 @@ const MovieDetail = () => {
     <div className="moveabout">
         <div className="name_movie">
             <h1 data-testid="movie-title">{movie.title}</h1>
-            <p data-testid="release_date">. {movie.release_date}</p>
-            <p data-testid="release_runtime">. {formatRuntime(movie.runtime)}</p>
+            <p data-testid="release_date">{movie.release_date}</p>
+            <p data-testid="release_runtime">{formatRuntime(movie.runtime)}</p>
         </div>
         <p data-testid="movie-overview">{movie.overview}</p>
         <div className="moviecast">

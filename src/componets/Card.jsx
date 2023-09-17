@@ -65,7 +65,7 @@ const Card = () => {
             alt=""
           />
           <div className="thenames">
-            <p data-testid="movie-release-date">USA, {releaseDate}</p>
+            <p data-testid="movie-release-date">{releaseDate}</p>
             <h2 className="movie_title" data-testid="movie-title">
               {movie.title}
             </h2>
